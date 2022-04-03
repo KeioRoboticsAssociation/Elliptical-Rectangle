@@ -1,12 +1,12 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-white row justify-content-between">
-    <h1>Circle Square(Alternative)</h1>
+    <h1>Elliptical Rectangle(Circle Squareリンク集)</h1>
   </nav>
   <div class="col-12">
     <div id=" app" class="row cards" style="padding:0 50px; margin: 10px 0 0 0">
       <div class="row">
-        <div class="col-md-4" v-for="club in data" :key="club.url">
-          <Card :club="club"></Card>
+        <div class="col-md-4" v-for="item in data" :key="item.id">
+          <Card :club="item"></Card>
         </div>
       </div>
     </div>
@@ -15,61 +15,12 @@
 
 <script setup lang="ts">
 import Card, { Club } from './components/Card.vue'
-import * as mdb from 'mdb-ui-kit' // lib
-import { Input } from 'mdb-ui-kit' // module
+// import * as mdb from 'mdb-ui-kit' // lib
+// import { Input } from 'mdb-ui-kit' // module
+import jsonData from '@/assets/orien.json'
 
-const data: Club[] = [
-  {
-    name: '将棋研究会',
-    url: '2',
-    campuses: ['日吉']
-  },
-  {
-    name: 'ワグネル・ソサィエティー男声合唱団',
-    url: '3',
-    campuses: ['日吉', '三田']
-  },
-  {
-    name: '塾生総合研究所',
-    url: '4',
-    campuses: ['日吉']
-  },
-  {
-    name: '貘之會',
-    url: '5',
-    campuses: ['日吉']
-  },
-  {
-    name: 'Twinkles',
-    url: '6',
-    campuses: ['日吉']
-  },
-  {
-    name: '無線工学研究会',
-    url: '7',
-    campuses: ['日吉']
-  },
-  {
-    name: '塾生会館運営委員会',
-    url: '8',
-    campuses: ['日吉']
-  },
-  {
-    name: 'SFC CLIP',
-    url: '9',
-    campuses: ['日吉']
-  },
-  {
-    name: 'アルティメットサークル ホワイトホーンズ',
-    url: '10',
-    campuses: ['日吉']
-  },
-  {
-    name: '',
-    url: '',
-    campuses: ['日吉']
-  }
-]
+const data = jsonData as Club[]
+
 </script>
 
 <style lang="scss">
@@ -94,14 +45,20 @@ const data: Club[] = [
   padding: 0;
 }
 
-.discription {
-  padding: 2% 8%;
+// img{
+//   height: 100%;
+// }
+
+.imgBoxInner {
+     width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    overflow: hidden;
 }
 
-iframe {
+img {
   width: 100%;
   height: auto;
-  aspect-ratio: 16/9;
 }
 
 ul {
