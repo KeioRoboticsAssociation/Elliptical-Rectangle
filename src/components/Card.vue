@@ -2,6 +2,7 @@
   <div class="card">
     <div class="card-body">
       <a :href="`//www.orientation.keio-students.jp/circle/${club.id}`">
+        <div class="imgBox"></div>
         <div class="imgBoxInner">
           <img :src="`${club.image}`" loading="lazy" />
         </div>
@@ -10,7 +11,6 @@
             <h5 class="card-text">{{ club.title }}</h5>
             <ul>
               <li>
-                キャンパス:
                 <div class="chip" v-for="(place) in props.club.places" :key="place">
                   {{ place }}
                   <!-- <span v-if="index != props.club.campuses.length">,</span> -->
